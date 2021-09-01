@@ -1,8 +1,7 @@
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { Mongoose } = require("mongoose");
-require("dotenv").config();
+
 
 const isUserValid = async (username, password) => {
   const checkUsernameLength = username.length >= 8;

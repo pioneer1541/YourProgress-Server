@@ -4,6 +4,8 @@ const app = express();
 const indexRouter = require("./routes/index");
 const registerRouter = require("./routes/register");
 const loginRouter = require('./routes/login')
+const taskRouter = require('./routes/tasks')
+const auth = require('./middleware/auth')
 require("dotenv").config();
 
 app.use(bodyParser.json());
@@ -21,7 +23,8 @@ app.use((req, res, next) => {
   // Request headers you wish to allow
   res.setHeader(
     "Access-Control-Allow-Headers",
-    "X-Requested-With,content-type"
+    "X-Requested-With,content-type,auth",
+    
   );
 
   // Set to true if you need the website to include cookies in the requests sent
@@ -35,6 +38,9 @@ app.use((req, res, next) => {
 app.use(indexRouter);
 app.use(registerRouter);
 app.use(loginRouter);
+// app.use('/task/',auth.auth)
+app.use(taskRouter);
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
