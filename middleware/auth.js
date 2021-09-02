@@ -7,7 +7,7 @@ module.exports = {
     console.log(tokenRaw)
     let token = jwt.verify(tokenRaw, process.env.JWT_SECRET);
     const id = token.id;
-
+    console.log(token)
     req.user = await User.findById(id);
     next();
   },
