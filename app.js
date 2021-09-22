@@ -24,7 +24,6 @@ app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Headers",
     "X-Requested-With,content-type,auth",
-    
   );
 
   // Set to true if you need the website to include cookies in the requests sent
