@@ -5,7 +5,6 @@ const indexRouter = require("./routes/index");
 const registerRouter = require("./routes/register");
 const loginRouter = require('./routes/login')
 const taskRouter = require('./routes/tasks')
-const auth = require('./middleware/auth')
 require("dotenv").config();
 
 app.use(bodyParser.json());

@@ -7,7 +7,7 @@ const taskIsValid = (newTask) => {
     return false;
   }
   if (newTask.startDate > newTask.endDate) {
-    message = "The Start Date must be early than End Dte!";
+    message = "The Start Date must be early than End Date!";
 
     return false;
   }
@@ -43,7 +43,7 @@ module.exports = {
         req.task = { state: false, message: "Creating new task failed!" };
       }
       next();
-    }else {
+    } else {
       req.task = { state: false, message: validResult.message };
       next();
     }
@@ -82,7 +82,7 @@ module.exports = {
     if (result.deletedCount === 0) {
       req.task = { state: false, message: "Deleting task failed!" };
     } else {
-      req.task = { state: true, message: "" }
+      req.task = { state: true, message: "" };
     }
     next();
   },
